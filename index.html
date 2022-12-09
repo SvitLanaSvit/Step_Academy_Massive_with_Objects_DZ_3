@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script src="script/script.js"></script>
+    <script>
+    //-----SORT-------
+    //buies.sort(compare);
+    console.log("-----------1-----------");
+    console.log("---------sort-------");
+    buies.sort((a,b) => (a.isBuyed > b.isBuyed) ? 1 : ((b.isBuyed > a.isBuyed) ? -1 : 0));
+    console.log(buies);
+    console.log("-------add buy------");
+    addBuy(buies, new Buy('Lenovo', 2, false));
+    console.log(buies);
+    addBuy(buies, new Buy('Sumsung', 1, false));
+    console.log(buies);
+    console.log("-------sale buy-----");
+    saleBuy('Lenovo');
+    console.log(buies);
+
+    console.log("-----------2-----------");
+    showScore(products);
+    console.log(`Total sum:\t\t\t${showTotalPrice(products)}`);
+    showTopProduct(products);
+    console.log(`The average price for product from the check = ${avgPriceOfProducts(products)}`);
+    console.log("------put style-----");
+    putStyleIntoParagraph(styleText, "I learn JavaScript!");
+
+    console.log("-----------3-----------");
+    academy.forEach(element => console.log(element.name));
+    console.log('--------------------');
+    showAuditoryInFaculty('it_developer');
+
+    console.log('----sort by places----');
+    academy.sort((a,b) =>{
+        return a.places - b.places;
+    })
+    academy.forEach(element => console.log(`${element.name}\t\t${element.places}`));
+    console.log('--show audit for group--');
+    showAuditoryByParam(academy, groupPW);
+    console.log('----sort by name----');
+    academy.sort((a,b) =>{
+        return a.name.localeCompare(b.name);
+    })
+    academy.forEach(element => console.log(`${element.name}`));
+    </script>
+</body>
+</html>
